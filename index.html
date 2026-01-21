@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
     <div class="container">
-        <a class="navbar-brand fw-semibold" href="#">Seifeddine</a>
+        <a class="navbar-brand fw-semibold" href="#" data-i18n="brand.name">Seifeddine</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
                 aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,25 +48,25 @@
     <div class="container py-4">
         <div class="row align-items-center g-4">
             <div class="col-lg-7">
-                <p class="text-uppercase small text-muted mb-2">Computer Science • Systems • Web</p>
-                <h1 class="display-5 fw-bold mb-3">Seifeddine Reguige</h1>
-                <p class="lead text-muted">
+                <p class="text-uppercase small text-muted mb-2" data-i18n="hero.kicker">Computer Science • Systems • Web</p>
+                <h1 class="display-5 fw-bold mb-3" data-i18n="hero.name">Seifeddine Reguige</h1>
+
+                <p class="lead text-muted" data-i18n="hero.subtitle">
                     Computer Science student focused on building reliable, clean web and systems solutions —
                     from backend logic and databases to troubleshooting and performance debugging.
                 </p>
 
                 <div class="d-flex gap-2 mt-4 flex-wrap">
-                    <a class="btn btn-dark" href="#projects">View Projects</a>
-                    <a class="btn btn-outline-dark" href="#contact">Contact</a>
-                    <!-- Later: add your PDF in assets/cv and enable this -->
-                    <!-- <a class="btn btn-outline-dark" href="assets/cv/CV_Seifeddine.pdf" target="_blank" rel="noreferrer">Download CV</a> -->
+                    <a class="btn btn-dark" href="#projects" data-i18n="hero.cta.projects">View Projects</a>
+                    <a class="btn btn-outline-dark" href="#contact" data-i18n="hero.cta.contact">Contact</a>
+                    <a class="btn btn-outline-dark" href="assets/cv/CV_Seifeddine.pdf" target="_blank" rel="noreferrer" data-i18n="hero.cta.cv">Download CV</a>
                 </div>
 
                 <div class="d-flex gap-2 mt-3 flex-wrap">
-                    <span class="badge rounded-pill text-bg-light border">Backend</span>
-                    <span class="badge rounded-pill text-bg-light border">Data/ML</span>
-                    <span class="badge rounded-pill text-bg-light border">Cybersecurity</span>
-                    <span class="badge rounded-pill text-bg-light border">Networking</span>
+                    <span class="badge rounded-pill text-bg-light border" data-i18n="hero.tag.backend">Backend</span>
+                    <span class="badge rounded-pill text-bg-light border" data-i18n="hero.tag.ml">Data/ML</span>
+                    <span class="badge rounded-pill text-bg-light border" data-i18n="hero.tag.cyber">Cybersecurity</span>
+                    <span class="badge rounded-pill text-bg-light border" data-i18n="hero.tag.net">Networking</span>
                 </div>
             </div>
 
@@ -79,45 +79,67 @@
 
 <section id="about" class="py-5 bg-light">
     <div class="container">
-        <h2 class="h3 fw-semibold mb-3">About</h2>
-        <p class="text-muted col-lg-9 mb-0">
-            Replace this with a short “about” based on your CV (5–8 lines max). Keep it direct and professional.
+        <h2 class="h3 fw-semibold mb-3" data-i18n="about.title">About</h2>
+
+        <p class="text-muted col-lg-10 mb-3" data-i18n="about.p1">
+            I’m a Computer Science student at the University of Ottawa, focused on backend and systems work:
+            Linux troubleshooting, database engineering, and building maintainable web solutions.
+        </p>
+
+        <p class="text-muted col-lg-10 mb-0" data-i18n="about.p2">
+            I enjoy debugging complex issues using logs, system metrics, and structured workflows —
+            then turning fixes into clean documentation and repeatable processes.
         </p>
     </div>
 </section>
 
 <section id="process" class="py-5">
     <div class="container">
-        <h2 class="h3 fw-semibold mb-3">How I Work</h2>
+        <h2 class="h3 fw-semibold mb-3" data-i18n="process.title">How I Work</h2>
+
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
                 <div class="p-4 border rounded-3 h-100 bg-white">
-                    <h3 class="h5 mb-2">1) Understand</h3>
-                    <p class="text-muted mb-0">Clarify goals, users, constraints, and success criteria.</p>
+                    <h3 class="h5 mb-2" data-i18n="process.s1.title">1) Understand</h3>
+                    <p class="text-muted mb-0" data-i18n="process.s1.desc">
+                        Clarify goals, users, constraints, and success criteria.
+                    </p>
                 </div>
             </div>
+
             <div class="col-md-6 col-lg-4">
                 <div class="p-4 border rounded-3 h-100 bg-white">
-                    <h3 class="h5 mb-2">2) Design</h3>
-                    <p class="text-muted mb-0">Sketch structure, define UI flow, and plan data/models if needed.</p>
+                    <h3 class="h5 mb-2" data-i18n="process.s2.title">2) Design</h3>
+                    <p class="text-muted mb-0" data-i18n="process.s2.desc">
+                        Sketch structure, define UI flow, and plan data/models if needed.
+                    </p>
                 </div>
             </div>
+
             <div class="col-md-6 col-lg-4">
                 <div class="p-4 border rounded-3 h-100 bg-white">
-                    <h3 class="h5 mb-2">3) Build</h3>
-                    <p class="text-muted mb-0">Implement in small, testable components with clean code.</p>
+                    <h3 class="h5 mb-2" data-i18n="process.s3.title">3) Build</h3>
+                    <p class="text-muted mb-0" data-i18n="process.s3.desc">
+                        Implement in small, testable components with clean code.
+                    </p>
                 </div>
             </div>
+
             <div class="col-md-6 col-lg-4">
                 <div class="p-4 border rounded-3 h-100 bg-white">
-                    <h3 class="h5 mb-2">4) Validate</h3>
-                    <p class="text-muted mb-0">Test edge cases, responsiveness, performance, and accessibility.</p>
+                    <h3 class="h5 mb-2" data-i18n="process.s4.title">4) Validate</h3>
+                    <p class="text-muted mb-0" data-i18n="process.s4.desc">
+                        Test edge cases, responsiveness, performance, and accessibility.
+                    </p>
                 </div>
             </div>
+
             <div class="col-md-6 col-lg-4">
                 <div class="p-4 border rounded-3 h-100 bg-white">
-                    <h3 class="h5 mb-2">5) Iterate</h3>
-                    <p class="text-muted mb-0">Refine based on feedback, document decisions, and polish.</p>
+                    <h3 class="h5 mb-2" data-i18n="process.s5.title">5) Iterate</h3>
+                    <p class="text-muted mb-0" data-i18n="process.s5.desc">
+                        Refine based on feedback, document decisions, and polish.
+                    </p>
                 </div>
             </div>
         </div>
@@ -127,54 +149,122 @@
 <section id="projects" class="py-5">
     <div class="container">
         <div class="d-flex align-items-end justify-content-between mb-3">
-            <h2 class="h3 fw-semibold mb-0">Projects</h2>
-            <span class="text-muted small">4 case studies</span>
+            <h2 class="h3 fw-semibold mb-0" data-i18n="projects.title">Projects</h2>
+            <span class="text-muted small" data-i18n="projects.subtitle">4 case studies</span>
         </div>
 
         <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
+            <!-- Project 1 -->
+            <div class="col-md-6 col-lg-6">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h3 class="h5">Project 1</h3>
-                        <p class="text-muted">One-line description.</p>
+                        <h3 class="h5" data-i18n="projects.p1.title">Movie Recommendation System</h3>
+                        <p class="text-muted" data-i18n="projects.p1.desc">
+                            Built data-processing pipelines, implemented similarity algorithms, and handled large dataset parsing across multi-language components.
+                        </p>
                         <div class="d-flex gap-2 flex-wrap">
-                            <span class="badge text-bg-light border">HTML</span>
-                            <span class="badge text-bg-light border">CSS</span>
-                            <span class="badge text-bg-light border">Bootstrap</span>
+                            <span class="badge text-bg-light border">Python</span>
+                            <span class="badge text-bg-light border">Java</span>
+                            <span class="badge text-bg-light border">Go</span>
                         </div>
                     </div>
                     <div class="card-footer bg-white border-0">
-                        <a class="btn btn-sm btn-outline-dark" href="#">View case study</a>
+                        <a class="btn btn-sm btn-outline-dark" href="#" data-i18n="projects.view">View case study</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Duplicate for 3 more projects -->
+            <!-- Project 2 -->
+            <div class="col-md-6 col-lg-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="h5" data-i18n="projects.p2.title">e-Hotels Reservation Platform</h3>
+                        <p class="text-muted" data-i18n="projects.p2.desc">
+                            Engineered a multi-hotel backend with normalized schemas, SQL triggers, indexing strategies, secure transactions, and end-to-end reservation logic.
+                        </p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <span class="badge text-bg-light border">PostgreSQL</span>
+                            <span class="badge text-bg-light border">MySQL</span>
+                            <span class="badge text-bg-light border">PHP</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <a class="btn btn-sm btn-outline-dark" href="#" data-i18n="projects.view">View case study</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-md-6 col-lg-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="h5" data-i18n="projects.p3.title">Secure PC Service App (Android)</h3>
+                        <p class="text-muted" data-i18n="projects.p3.desc">
+                            Designed schemas and CRUD workflows, implemented validation and UI/data integration backed by a local database engine.
+                        </p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <span class="badge text-bg-light border">Java</span>
+                            <span class="badge text-bg-light border">SQLite</span>
+                            <span class="badge text-bg-light border">Android</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <a class="btn btn-sm btn-outline-dark" href="#" data-i18n="projects.view">View case study</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="col-md-6 col-lg-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="h5" data-i18n="projects.p4.title">C++ Card Game</h3>
+                        <p class="text-muted" data-i18n="projects.p4.desc">
+                            Built a C++ object-oriented card game using core OOP principles (classes, inheritance, polymorphism),
+                            with clean game logic, input handling, and structured design.
+                        </p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <span class="badge text-bg-light border">C++</span>
+                            <span class="badge text-bg-light border">OOP</span>
+                            <span class="badge text-bg-light border">CLI</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <a class="btn btn-sm btn-outline-dark" href="#" data-i18n="projects.view">View case study</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
 </section>
 
 <section id="experience" class="py-5 bg-light">
     <div class="container">
-        <h2 class="h3 fw-semibold mb-3">Experience</h2>
+        <h2 class="h3 fw-semibold mb-3" data-i18n="experience.title">Experience</h2>
+
         <div class="row g-4">
             <div class="col-lg-6">
                 <div class="p-4 border rounded-3 h-100 bg-white">
-                    <h3 class="h5 mb-1">Technical Assistant — Adapted Exams Centre (uOttawa)</h3>
-                    <p class="text-muted mb-2">Ottawa, ON</p>
+                    <h3 class="h5 mb-1" data-i18n="experience.ta.title">Technical Assistant — Adapted Exams Centre (uOttawa)</h3>
+                    <p class="text-muted mb-2" data-i18n="experience.ta.meta">Ottawa, ON • Sep 2025 – Apr 2026</p>
                     <ul class="text-muted mb-0">
-                        <li>Replace with 2–4 strong bullets from your CV.</li>
-                        <li>Focus on troubleshooting, reliability, and communication.</li>
+                        <li data-i18n="experience.ta.b1">Diagnosed and resolved 95% of incidents across 100+ Linux/Windows workstations (OS crashes, driver faults, network stack issues, configuration errors).</li>
+                        <li data-i18n="experience.ta.b2">Performed low-level troubleshooting through logs, system metrics, process monitoring, and resource utilization analysis.</li>
+                        <li data-i18n="experience.ta.b3">Automated environment preparation and validation checks to ensure stability during high-load exam sessions.</li>
+                        <li data-i18n="experience.ta.b4">Maintained documented workflows, system procedures, and debug playbooks for operational reliability.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="col-lg-6">
                 <div class="p-4 border rounded-3 h-100 bg-white">
-                    <h3 class="h5 mb-1">Web Administrator — Faculty of Health Sciences (uOttawa)</h3>
-                    <p class="text-muted mb-2">Ottawa, ON</p>
+                    <h3 class="h5 mb-1" data-i18n="experience.wa.title">Web Administrator — Faculty of Health Sciences (uOttawa)</h3>
+                    <p class="text-muted mb-2" data-i18n="experience.wa.meta">Ottawa, ON • Oct 2024 – Apr 2025</p>
                     <ul class="text-muted mb-0">
-                        <li>Replace with 2–4 strong bullets from your CV.</li>
-                        <li>Highlight CMS work, analytics, accessibility, and optimization.</li>
+                        <li data-i18n="experience.wa.b1">Used GA4/Siteimprove analytics to monitor user behavior, optimize traffic flow, and improve key engagement metrics by 15%.</li>
+                        <li data-i18n="experience.wa.b2">Cleaned and restructured data-driven pages, improving SEO consistency, content health, and accessibility compliance.</li>
+                        <li data-i18n="experience.wa.b3">Managed structured content updates, metadata, and user permissions within Drupal/WordPress environments.</li>
                     </ul>
                 </div>
             </div>
@@ -184,12 +274,53 @@
 
 <section id="contact" class="py-5">
     <div class="container">
-        <h2 class="h3 fw-semibold mb-3">Contact</h2>
-        <p class="text-muted mb-2">Email: <a href="mailto:you@email.com">you@email.com</a></p>
-        <p class="text-muted mb-0">
-            <a href="#" class="me-3">GitHub</a>
-            <a href="#">LinkedIn</a>
-        </p>
+        <h2 class="h3 fw-semibold mb-3" data-i18n="contact.title">Contact</h2>
+
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="p-4 border rounded-3 h-100 bg-white">
+                    <p class="text-muted mb-3" data-i18n="contact.lead">
+                        Want to collaborate or discuss an internship? Send me a message.
+                    </p>
+
+                    <div class="text-muted">
+                        <div class="mb-2">
+                            <span class="fw-semibold" data-i18n="contact.emailLabel">Email:</span>
+                            <a href="mailto:sregu043@uottawa.ca">sregu043@uottawa.ca</a>
+                        </div>
+
+                        <div class="mb-2">
+                            <span class="fw-semibold" data-i18n="contact.phoneLabel">Phone:</span>
+                            <a href="tel: on demand">+1 (438) 978-8480</a>
+                        </div>
+
+                        <div class="mb-2">
+                            <span class="fw-semibold">LinkedIn:</span>
+                            <a href="https://linkedin.com/in/seifeddine-reguige-4164bb251" target="_blank" rel="noreferrer">
+                                linkedin.com/in/seifeddine-reguige-4164bb251
+                            </a>
+                        </div>
+
+                        <div>
+                            <span class="fw-semibold">GitHub:</span>
+                            <a href="https://github.com/idxwze" target="_blank" rel="noreferrer">
+                                github.com/your-username
+                            </a>
+                            <span class="small ms-2" data-i18n="contact.githubNote">(replace with your real link)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="p-4 border rounded-3 h-100 bg-white">
+                    <h3 class="h5 mb-2" data-i18n="contact.noteTitle">Quick note</h3>
+                    <p class="text-muted mb-0" data-i18n="contact.noteBody">
+                        This portfolio is built for SEG3525 and will evolve into a long-term professional site with detailed case studies, screenshots, and design rationale.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
