@@ -41,27 +41,6 @@ Bootstrap was used for layout and responsiveness, while custom CSS was added for
 
 ---
 
-## Project Structure
-/
-├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   └── main.js
-├── assets/
-│   ├── img/
-│   │   ├── profile.jpg
-│   │   └── projects/
-│   └── cv/
-│       └── CV_Seifeddine.pdf
-└── projects/
-├── movie-recommender.html
-├── e-hotels.html
-├── secure-pc-app.html
-└── card-game.html
-
----
-
 ## Projects
 
 The portfolio includes the following project case studies:
