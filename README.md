@@ -1,4 +1,4 @@
-# Portfolio – Seifeddine Reguige
+# Portfolio - Seifeddine Reguige
 
 Academic portfolio developed as part of **SEG3525 – User Interface Design and Analysis**.
 
@@ -25,7 +25,7 @@ The interface supports both **English and French**, as well as **light and dark 
 ## Live Website
 
 Portfolio link (GitHub Pages):  
-https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/
+https://idxwze.github.io/portfolioseifeddine
 
 ---
 
@@ -96,9 +96,6 @@ The objective was to apply user interface design principles while keeping the in
 ## Author
 
 Seifeddine Reguige  
-Email: sregu043@uottawa.ca  
-LinkedIn: https://linkedin.com/in/seifeddine-reguige-4164bb251  
-GitHub: https://github.com/idxwze
 
 ---
 
