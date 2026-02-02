@@ -4,11 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Recommendation System | Seifeddine Reguige</title>
+
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Same CSS as home -->
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -64,7 +69,7 @@
     <div class="container">
         <div class="row g-4">
 
-            <!-- Left -->
+            <!-- Main content -->
             <div class="col-lg-8">
 
                 <section class="mb-4">
@@ -74,7 +79,7 @@
                             This project builds a recommendation pipeline that takes movie metadata and produces top-N movie suggestions using similarity scoring.
                         </p>
                         <p class="text-muted mb-0" data-i18n="case.movie.overview.p2">
-                            The focus is on maintainable design: data ingestion, preprocessing, scoring, and ranking are separated so the system can evolve.
+                            The focus is on maintainable design: ingestion, preprocessing, scoring, and ranking are separated so the system can evolve.
                         </p>
                     </div>
                 </section>
@@ -97,9 +102,9 @@
                             I implemented a modular pipeline: ingestion → preprocessing/feature extraction → similarity scoring → ranking.
                         </p>
                         <ul class="text-muted mb-0">
-                            <li data-i18n="case.movie.solution.b1">Preprocessing steps normalize text fields and numeric features.</li>
-                            <li data-i18n="case.movie.solution.b2">Similarity scoring can be swapped (cosine-style / set similarity) without changing the rest of the code.</li>
-                            <li data-i18n="case.movie.solution.b3">Top-N ranking output is structured for evaluation and future UI/API integration.</li>
+                            <li data-i18n="case.movie.solution.b1">Preprocessing normalizes text fields and numeric features.</li>
+                            <li data-i18n="case.movie.solution.b2">Similarity scoring is swappable (different strategies) without changing the rest of the pipeline.</li>
+                            <li data-i18n="case.movie.solution.b3">Top-N output is structured for evaluation and future UI/API integration.</li>
                         </ul>
                     </div>
                 </section>
@@ -111,25 +116,33 @@
                             <div class="col-md-6">
                                 <div class="p-3 border rounded-3">
                                     <h3 class="h6 mb-1" data-i18n="case.movie.features.f1.title">Scalable preprocessing</h3>
-                                    <p class="text-muted mb-0" data-i18n="case.movie.features.f1.desc">Robust parsing and cleaning designed to handle larger datasets.</p>
+                                    <p class="text-muted mb-0" data-i18n="case.movie.features.f1.desc">
+                                        Robust parsing and cleaning designed to handle larger datasets.
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="p-3 border rounded-3">
                                     <h3 class="h6 mb-1" data-i18n="case.movie.features.f2.title">Configurable similarity</h3>
-                                    <p class="text-muted mb-0" data-i18n="case.movie.features.f2.desc">Switch scoring strategies without rewriting the pipeline.</p>
+                                    <p class="text-muted mb-0" data-i18n="case.movie.features.f2.desc">
+                                        Switch scoring strategies without rewriting the pipeline.
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="p-3 border rounded-3">
                                     <h3 class="h6 mb-1" data-i18n="case.movie.features.f3.title">Clean separation</h3>
-                                    <p class="text-muted mb-0" data-i18n="case.movie.features.f3.desc">Data layer and ranking logic are separated for maintainability.</p>
+                                    <p class="text-muted mb-0" data-i18n="case.movie.features.f3.desc">
+                                        Data layer and ranking logic are separated for maintainability.
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="p-3 border rounded-3">
                                     <h3 class="h6 mb-1" data-i18n="case.movie.features.f4.title">Evaluation-ready output</h3>
-                                    <p class="text-muted mb-0" data-i18n="case.movie.features.f4.desc">Top-N output designed to support metrics (Precision@K, Recall@K).</p>
+                                    <p class="text-muted mb-0" data-i18n="case.movie.features.f4.desc">
+                                        Top-N output designed to support metrics (Precision@K, Recall@K).
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +152,7 @@
                 <section class="mb-4">
                     <h2 class="h4 fw-semibold mb-2" data-i18n="case.movie.arch.title">Architecture</h2>
                     <div class="p-4 border rounded-3 bg-white">
-                        <p class="text-muted mb-2" data-i18n="case.movie.arch.p1">High-level structure (example):</p>
+                        <p class="text-muted mb-2">High-level structure:</p>
 
                         <pre class="mb-0"><code>
 /src
@@ -157,15 +170,17 @@
                 </section>
 
                 <section class="mb-4">
-                    <h2 class="h4 fw-semibold mb-2" data-i18n="case.movie.ui.title">UI (screenshots)</h2>
+                    <h2 class="h4 fw-semibold mb-2" data-i18n="case.movie.ui.title">UI</h2>
                     <div class="p-4 border rounded-3 bg-white">
-                        <p class="text-muted mb-3" data-i18n="case.movie.ui.note">
-                            Add screenshots here: dataset summary, similarity results, top-N output, or a small demo UI if you have one.
-                        </p>
+                        <p class="text-muted mb-3" data-i18n="case.movie.ui.soon">Screenshots will be added soon.</p>
 
                         <div class="row g-3">
-                            <div class="col-md-6"><div class="border rounded-3 p-3 text-muted small">Screenshot 1 — Dataset / Preprocessing</div></div>
-                            <div class="col-md-6"><div class="border rounded-3 p-3 text-muted small">Screenshot 2 — Similarity / Ranking</div></div>
+                            <div class="border rounded-3 p-3 text-muted small" data-i18n="case.movie.ui.ph1">
+                                Dataset / preprocessing (coming soon)
+                            </div>
+                            <div class="border rounded-3 p-3 text-muted small" data-i18n="case.movie.ui.ph2">
+                                Similarity / ranking results (coming soon)
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -183,7 +198,7 @@
 
             </div>
 
-            <!-- Right -->
+            <!-- Summary -->
             <div class="col-lg-4">
                 <aside class="p-4 border rounded-3 bg-white h-100">
                     <h2 class="h5 fw-semibold mb-3" data-i18n="case.movie.summary.title">Project summary</h2>
@@ -220,5 +235,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../js/main.js"></script>
+
+<!-- Simple note: this page uses the same JS (theme + language) -->
 </body>
 </html>

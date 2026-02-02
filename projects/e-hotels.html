@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>e-Hotels | Seifeddine Reguige</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -69,10 +70,9 @@
   <div class="container">
     <div class="row g-4">
 
-      <!-- Left: content -->
+      <!-- Main content -->
       <div class="col-lg-8">
 
-        <!-- Overview -->
         <section class="mb-4">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.hotels.overview.title">Overview</h2>
           <div class="p-4 border rounded-3 bg-white">
@@ -87,7 +87,6 @@
           </div>
         </section>
 
-        <!-- Problem -->
         <section class="mb-4">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.hotels.problem.title">Problem</h2>
           <div class="p-4 border rounded-3 bg-white">
@@ -99,7 +98,6 @@
           </div>
         </section>
 
-        <!-- Requirements snapshot -->
         <section class="mb-4">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.hotels.req.title">Key requirements</h2>
           <div class="p-4 border rounded-3 bg-white">
@@ -109,6 +107,7 @@
               <li data-i18n="case.hotels.req.b3">Search/filter rooms by date range, capacity, area, chain, hotel category, hotel size, and price. Results update when filters change.</li>
               <li data-i18n="case.hotels.req.b4">Provide two SQL Views: (1) available rooms by area; (2) capacity of rooms for a specific hotel.</li>
             </ul>
+
             <p class="text-muted mt-3 mb-0">
               <span class="small" data-i18n="case.hotels.req.note">
                 (Summarized from the project brief; full specification in the original PDF.)
@@ -117,7 +116,6 @@
           </div>
         </section>
 
-        <!-- Solution -->
         <section class="mb-4">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.hotels.solution.title">Solution</h2>
           <div class="p-4 border rounded-3 bg-white">
@@ -133,24 +131,23 @@
           </div>
         </section>
 
-        <!-- Architecture / Data model -->
         <section class="mb-4">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.hotels.arch.title">Data model & architecture</h2>
           <div class="p-4 border rounded-3 bg-white">
             <p class="text-muted mb-2" data-i18n="case.hotels.arch.p1">
-              High-level entities and relationships (conceptual):
+              Main entities and relationships:
             </p>
 
             <pre class="mb-0"><code>
-HotelChain (HQ, contacts)
-  1..* Hotel (address, category, contacts, number_of_rooms, area)
-      1..* Room (price, capacity, view, extendable, damages)
-Room *..* Amenity (TV, AC, fridge, ...)
-Customer (name, address, SSN/NAS, registration_date)
-Employee (name, address, SSN/NAS, role, hotel_id)
-Reservation (customer_id, room_id, start_date, end_date, status, archived)
-Rental (customer_id, room_id, employee_id, start_date, end_date, payment_flag, archived)
-SQL Views: availability_by_area, room_capacity_by_hotel
+HotelChain
+  -> Hotel
+      -> Room
+Room <-> Amenity
+Customer
+Employee
+Reservation
+Rental
+Views: availability_by_area, room_capacity_by_hotel
             </code></pre>
 
             <p class="text-muted mt-3 mb-0" data-i18n="case.hotels.arch.p2">
@@ -159,7 +156,6 @@ SQL Views: availability_by_area, room_capacity_by_hotel
           </div>
         </section>
 
-        <!-- Features -->
         <section class="mb-4">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.hotels.features.title">Key features</h2>
           <div class="p-4 border rounded-3 bg-white">
@@ -203,40 +199,30 @@ SQL Views: availability_by_area, room_capacity_by_hotel
           </div>
         </section>
 
-        <!-- Screenshots placeholders -->
         <section class="mb-4">
-          <h2 class="h4 fw-semibold mb-2" data-i18n="case.hotels.ui.title">UI (screenshots)</h2>
+          <h2 class="h4 fw-semibold mb-2" data-i18n="case.hotels.ui.title">UI</h2>
           <div class="p-4 border rounded-3 bg-white">
             <p class="text-muted mb-3" data-i18n="case.hotels.ui.note">
-              Add screenshots here: filters/search, reservation form, employee rental conversion, admin CRUD screens.
+              Screenshots will be added soon.
             </p>
 
             <div class="row g-3">
               <div class="col-md-6">
-                <div class="border rounded-3 p-3 text-muted small">
-                  Screenshot 1 — Search / Filters
-                </div>
+                <div class="border rounded-3 p-3 text-muted small">Search / filters (coming soon)</div>
               </div>
               <div class="col-md-6">
-                <div class="border rounded-3 p-3 text-muted small">
-                  Screenshot 2 — Reservation / Rental Flow
-                </div>
+                <div class="border rounded-3 p-3 text-muted small">Reservation / rental flow (coming soon)</div>
               </div>
               <div class="col-md-6">
-                <div class="border rounded-3 p-3 text-muted small">
-                  Screenshot 3 — Admin CRUD (Hotels/Rooms)
-                </div>
+                <div class="border rounded-3 p-3 text-muted small">Admin CRUD (coming soon)</div>
               </div>
               <div class="col-md-6">
-                <div class="border rounded-3 p-3 text-muted small">
-                  Screenshot 4 — SQL Views Page
-                </div>
+                <div class="border rounded-3 p-3 text-muted small">SQL views (coming soon)</div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Next improvements -->
         <section class="mb-0">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.hotels.next.title">Next improvements</h2>
           <div class="p-4 border rounded-3 bg-white">
@@ -250,7 +236,7 @@ SQL Views: availability_by_area, room_capacity_by_hotel
 
       </div>
 
-      <!-- Right: summary -->
+      <!-- Side summary -->
       <div class="col-lg-4">
         <aside class="p-4 border rounded-3 bg-white h-100">
           <h2 class="h5 fw-semibold mb-3" data-i18n="case.hotels.summary.title">Project summary</h2>
@@ -275,12 +261,6 @@ SQL Views: availability_by_area, room_capacity_by_hotel
           <hr class="my-4">
 
           <a class="btn btn-dark w-100 mb-2" href="../index.html#contact" data-i18n="case.hotels.summary.ctaContact">Contact</a>
-
-          <!-- Optional: repo link -->
-          <!--
-          <a class="btn btn-outline-dark w-100" href="https://github.com/..." target="_blank" rel="noreferrer"
-             data-i18n="case.hotels.summary.ctaRepo">View code</a>
-          -->
         </aside>
       </div>
 
@@ -294,12 +274,9 @@ SQL Views: availability_by_area, room_capacity_by_hotel
   </div>
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../js/main.js"></script>
 
-<!-- Spec reference for your report/portfolio (do not display on page)
-Project spec: CSI2532 e-Hotels brief (ERD, schema, constraints, triggers, indexes, web UI, views).
--->
+<!-- Simple note for myself: this page uses the same JS (theme + language) -->
 </body>
 </html>

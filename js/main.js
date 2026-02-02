@@ -131,6 +131,10 @@ const translations = {
         "experience.wa.b3":
             "Managed structured content updates, metadata, and user permissions within Drupal/WordPress environments.",
 
+        "case.movie.ui.soon": "Screenshots will be added soon.",
+        "case.movie.ui.ph1": "Dataset / preprocessing (coming soon)",
+        "case.movie.ui.ph2": "Similarity / ranking results (coming soon)",
+
         "contact.title": "Contact",
         "contact.lead": "Want to collaborate or discuss an internship? Send me a message.",
         "contact.emailLabel": "Email:",
@@ -138,9 +142,17 @@ const translations = {
         "contact.phoneValue": "On demand",
         "contact.githubNote": "",
         "contact.noteTitle": "Quick note",
+
+
+        "case.ui.title": "Screenshots / Demo",
+        "case.ui.note": "Screenshots and a short demo walkthrough will be added soon.",
+        "case.summary.ctaRepo": "View code (soon)",
+
+
         "contact.noteBody":
             "This portfolio is built for SEG3525 and will evolve into a long-term professional site with detailed case studies, screenshots, and design rationale."
     },
+
 
     fr: {
         "brand.name": "Seifeddine",
@@ -220,6 +232,15 @@ const translations = {
             "Gestion des mises à jour de contenu, métadonnées et permissions utilisateurs dans des environnements Drupal/WordPress.",
 
         "contact.title": "Contact",
+
+        "case.ui.title": "Captures / Démo",
+        "case.ui.note": "Des captures et une courte démo seront ajoutées bientôt.",
+        "case.summary.ctaRepo": "Voir le code (bientôt)",
+
+        "case.movie.ui.soon": "Des captures seront ajoutées bientôt.",
+        "case.movie.ui.ph1": "Dataset / prétraitement (à ajouter bientôt)",
+        "case.movie.ui.ph2": "Similarité / résultats de ranking (à ajouter bientôt)",
+
         "contact.lead": "Tu veux collaborer ou discuter d’un stage ? Envoie-moi un message.",
         "contact.emailLabel": "Email :",
         "contact.phoneLabel": "Téléphone :",

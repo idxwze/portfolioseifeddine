@@ -8,13 +8,20 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- Same CSS as home -->
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+
+<div class="bg-blobs" aria-hidden="true"></div>
+
+<a class="visually-hidden-focusable position-absolute top-0 start-0 p-2 bg-white border rounded-3 m-2"
+   href="#main" data-i18n="a11y.skip">Skip to content</a>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
   <div class="container">
@@ -27,8 +34,12 @@
 
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html#projects" data-i18n="nav.projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+        </li>
 
         <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-flex gap-2">
           <button id="langToggle" class="btn btn-sm btn-outline-dark" type="button" aria-label="Toggle language">FR</button>
@@ -40,17 +51,22 @@
 </nav>
 
 <header class="py-5 hero">
+  <div class="hero-fog" aria-hidden="true"></div>
+
   <div class="container py-4">
-    <p class="text-uppercase small text-muted mb-2">
-      <a href="../index.html#projects" class="text-muted text-decoration-none">← <span data-i18n="case.back">Back to projects</span></a>
+    <p class="text-uppercase small text-muted mb-2 reveal" data-delay="1">
+      <a href="../index.html#projects" class="text-muted text-decoration-none">
+        ← <span data-i18n="case.back">Back to projects</span>
+      </a>
     </p>
 
-    <h1 class="display-6 fw-bold mb-2" data-i18n="case.card.title">C++ Card Game</h1>
-    <p class="lead text-muted mb-4" data-i18n="case.card.subtitle">
+    <h1 class="display-6 fw-bold mb-2 reveal" data-delay="2" data-i18n="case.card.title">C++ Card Game</h1>
+
+    <p class="lead text-muted mb-4 reveal" data-delay="3" data-i18n="case.card.subtitle">
       An object-oriented card game in C++ with clean architecture, game rules engine, and structured design.
     </p>
 
-    <div class="d-flex gap-2 flex-wrap">
+    <div class="d-flex gap-2 flex-wrap reveal" data-delay="4">
       <span class="badge text-bg-light border">C++</span>
       <span class="badge text-bg-light border">OOP</span>
       <span class="badge text-bg-light border">CLI</span>
@@ -59,14 +75,14 @@
   </div>
 </header>
 
-<main class="py-5">
+<main id="main" class="py-5">
   <div class="container">
     <div class="row g-4">
 
       <!-- Left: content -->
       <div class="col-lg-8">
 
-        <section class="mb-4">
+        <section class="mb-4 reveal" data-delay="1">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.overview.title">Overview</h2>
           <div class="p-4 border rounded-3 bg-white">
             <p class="text-muted mb-2" data-i18n="case.overview.p1">
@@ -79,7 +95,7 @@
           </div>
         </section>
 
-        <section class="mb-4">
+        <section class="mb-4 reveal" data-delay="2">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.problem.title">Problem</h2>
           <div class="p-4 border rounded-3 bg-white">
             <ul class="text-muted mb-0">
@@ -90,7 +106,7 @@
           </div>
         </section>
 
-        <section class="mb-4">
+        <section class="mb-4 reveal" data-delay="3">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.solution.title">Solution</h2>
           <div class="p-4 border rounded-3 bg-white">
             <p class="text-muted mb-2" data-i18n="case.solution.p1">
@@ -105,47 +121,54 @@
           </div>
         </section>
 
-        <section class="mb-4">
+        <section class="mb-4 reveal" data-delay="1">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.features.title">Key features</h2>
           <div class="p-4 border rounded-3 bg-white">
             <div class="row g-3">
               <div class="col-md-6">
-                <div class="p-3 border rounded-3">
+                <div class="p-3 border rounded-3 h-100">
                   <h3 class="h6 mb-1" data-i18n="case.features.f1.title">Clean game loop</h3>
-                  <p class="text-muted mb-0" data-i18n="case.features.f1.desc">Turns, phases, and end conditions handled by a single game engine.</p>
+                  <p class="text-muted mb-0" data-i18n="case.features.f1.desc">
+                    Turns, phases, and end conditions handled by a single game engine.
+                  </p>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="p-3 border rounded-3">
+                <div class="p-3 border rounded-3 h-100">
                   <h3 class="h6 mb-1" data-i18n="case.features.f2.title">OOP extensibility</h3>
-                  <p class="text-muted mb-0" data-i18n="case.features.f2.desc">Add new card types without changing existing logic (polymorphism).</p>
+                  <p class="text-muted mb-0" data-i18n="case.features.f2.desc">
+                    Add new card types without changing existing logic (polymorphism).
+                  </p>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="p-3 border rounded-3">
+                <div class="p-3 border rounded-3 h-100">
                   <h3 class="h6 mb-1" data-i18n="case.features.f3.title">Validation & state safety</h3>
-                  <p class="text-muted mb-0" data-i18n="case.features.f3.desc">Moves are validated to avoid invalid states and edge case bugs.</p>
+                  <p class="text-muted mb-0" data-i18n="case.features.f3.desc">
+                    Moves are validated to avoid invalid states and edge case bugs.
+                  </p>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="p-3 border rounded-3">
+                <div class="p-3 border rounded-3 h-100">
                   <h3 class="h6 mb-1" data-i18n="case.features.f4.title">Readable structure</h3>
-                  <p class="text-muted mb-0" data-i18n="case.features.f4.desc">Clear folder/class responsibilities and documentation-friendly flow.</p>
+                  <p class="text-muted mb-0" data-i18n="case.features.f4.desc">
+                    Clear folder/class responsibilities and documentation-friendly flow.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="mb-4">
+        <section class="mb-4 reveal" data-delay="2">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.arch.title">Architecture</h2>
           <div class="p-4 border rounded-3 bg-white">
             <p class="text-muted mb-2" data-i18n="case.arch.p1">
-              High-level structure (example):
+              High-level structure:
             </p>
 
-            <pre class="mb-0"><code>
-/src
+            <pre class="mb-0"><code>/src
   Game.cpp / Game.h
   Player.cpp / Player.h
   Deck.cpp / Deck.h
@@ -154,8 +177,7 @@
   cards/
     AttackCard.h
     DefenseCard.h
-    ...
-            </code></pre>
+</code></pre>
 
             <p class="text-muted mt-3 mb-0" data-i18n="case.arch.p2">
               The game engine controls the flow; cards encapsulate behavior; players interact through validated actions.
@@ -163,7 +185,16 @@
           </div>
         </section>
 
-        <section class="mb-0">
+        <section class="mb-4 reveal" data-delay="3">
+          <h2 class="h4 fw-semibold mb-2" data-i18n="case.ui.title">Screenshots / Demo</h2>
+          <div class="p-4 border rounded-3 bg-white">
+            <p class="text-muted mb-0" data-i18n="case.ui.note">
+              Screenshots and a short demo walkthrough will be added soon.
+            </p>
+          </div>
+        </section>
+
+        <section class="mb-0 reveal" data-delay="1">
           <h2 class="h4 fw-semibold mb-2" data-i18n="case.next.title">Next improvements</h2>
           <div class="p-4 border rounded-3 bg-white">
             <ul class="text-muted mb-0">
@@ -178,7 +209,7 @@
 
       <!-- Right: summary -->
       <div class="col-lg-4">
-        <aside class="p-4 border rounded-3 bg-white h-100">
+        <aside class="p-4 border rounded-3 bg-white h-100 reveal" data-delay="2">
           <h2 class="h5 fw-semibold mb-3" data-i18n="case.summary.title">Project summary</h2>
 
           <div class="mb-3">
@@ -200,11 +231,9 @@
 
           <a class="btn btn-dark w-100 mb-2" href="../index.html#contact" data-i18n="case.summary.ctaContact">Contact</a>
 
-          <!-- Optional: if you have a repo link for this project -->
-          <!--
-          <a class="btn btn-outline-dark w-100" href="https://github.com/..." target="_blank" rel="noreferrer"
-             data-i18n="case.summary.ctaRepo">View code</a>
-          -->
+          <a class="btn btn-outline-dark w-100" href="#" data-i18n="case.summary.ctaRepo" aria-disabled="true">
+            View code (soon)
+          </a>
         </aside>
       </div>
 
