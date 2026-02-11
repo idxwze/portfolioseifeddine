@@ -1,17 +1,15 @@
 # Portfolio - Seifeddine Reguige
 
-Academic portfolio developed as part of **SEG3525 – User Interface Design and Analysis**.
+Academic portfolio developed as part of **SEG3525 - User Interface Design and Analysis**.
 
-This website presents my academic background, technical skills, work methodology, and selected projects through a clean, structured, and responsive user interface.
-
----
+This website presents my academic background, technical skills, work methodology, and selected projects through a clean, structured, and responsive interface.
 
 ## Overview
 
-The portfolio is designed as a single-page website with dedicated project case study pages.  
-The focus is on clarity, readability, and consistency rather than heavy visual effects.
+The portfolio is built around a main home page with dedicated case-study pages.
+The focus is clarity, readability, accessibility, and maintainable front-end code.
 
-Main sections include:
+Main sections:
 - About
 - Method / Process
 - Projects
@@ -20,62 +18,53 @@ Main sections include:
 
 The interface supports both **English and French**, as well as **light and dark modes**.
 
----
-
 ## Live Website
 
-Portfolio link (GitHub Pages):  
-https://idxwze.github.io/portfolioseifeddine
+[https://idxwze.github.io/portfolioseifeddine](https://idxwze.github.io/portfolioseifeddine)
 
----
+## Stack
 
-## Technologies Used
-
-- HTML5  
-- CSS3  
-- Bootstrap 5  
-- JavaScript  
+- HTML5
+- CSS3
+- Bootstrap 5 (CDN)
+- Vanilla JavaScript
 - Google Fonts (Inter)
 
-Bootstrap was used for layout and responsiveness, while custom CSS was added for styling and visual consistency.
+## Project Structure
 
----
+- `index.html`: home page
+- `projects/*.html`: project case studies
+- `css/styles.css`: global styling and theming
+- `js/main.js`: theme, language, intro, and reveal behavior
+- `assets/`: images and CV
 
-## Projects
+## Included Projects
 
-The portfolio includes the following project case studies:
 - Movie Recommendation System
 - e-Hotels Reservation Platform
 - Secure PC Service App (Android)
 - C++ Card Game
 
-Each project page presents the context, problem, solution, architecture, and future improvements.  
-Some sections are intentionally left for future updates and improvements.
+Each case study presents context, problem, solution, architecture, and next improvements.
 
----
+## Features
 
-## Design Choices
+- Responsive layout
+- Light/dark theme toggle with persistence
+- EN/FR language support on fully mapped pages
+- Scroll reveal effects with reduced-motion fallback
+- Intro animation (first visit)
+- Accessibility basics (skip link, visible focus styles)
 
-- Neutral color palette (black, white, dark gray) to ensure readability
-- Simple and consistent typography
-- Clear visual hierarchy using spacing and sectioning
-- Responsive layout using Bootstrap’s grid system
-- Subtle transitions and animations to guide navigation
-- Accessibility-focused structure and contrast
+## Run Locally
 
----
+Open `index.html` in your browser.
 
-## Academic Context
+## Notes
 
-This portfolio was created for **SEG3525 – User Interface Design and Analysis** at the University of Ottawa.  
-The objective was to apply user interface design principles while keeping the interface professional, accessible, and maintainable.
-
----
+- Project pages reuse the same global CSS and JS as the home page.
+- If a page is not fully translated in both languages, the language toggle is hidden to avoid partial UI translation.
 
 ## Author
 
-Seifeddine Reguige  
-
----
-
-© 2026 Seifeddine Reguige
+Seifeddine Reguige

@@ -27,25 +27,32 @@ function setTheme(theme) {
     setStored("theme", theme);
 
     if (themeToggle) {
-        // if theme is dark -> show sun (meaning "switch to light")
         themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
         themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
+        themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
     }
 }
 
-// Default theme:
-// If user has saved preference, use it.
-// Else try system preference.
-// Else use "dark" (best for your B&W motion design).
 const savedTheme = getStored("theme");
 const systemPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-setTheme(savedTheme || (systemPrefersDark ? "dark" : "dark"));
+const initialTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
+setTheme(initialTheme);
 
 if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-        const current = root.getAttribute("data-theme") || "dark";
+        const current = root.getAttribute("data-theme") || initialTheme;
         setTheme(current === "dark" ? "light" : "dark");
     });
+}
+
+if (!savedTheme && window.matchMedia) {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const onThemeChange = (event) => {
+        setTheme(event.matches ? "dark" : "light");
+    };
+
+    if (media.addEventListener) media.addEventListener("change", onThemeChange);
+    else if (media.addListener) media.addListener(onThemeChange);
 }
 
 // ===== i18n (EN/FR) =====
@@ -54,6 +61,7 @@ const langToggle = document.getElementById("langToggle");
 // EN is default (as requested)
 const translations = {
     en: {
+        "a11y.skip": "Skip to content",
         "brand.name": "Seifeddine",
 
         "nav.about": "About",
@@ -155,6 +163,7 @@ const translations = {
 
 
     fr: {
+        "a11y.skip": "Aller au contenu",
         "brand.name": "Seifeddine",
 
         "nav.about": "À propos",
@@ -253,6 +262,8 @@ const translations = {
 };
 
 function applyLang(lang) {
+    root.setAttribute("lang", lang);
+
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         const value = translations[lang]?.[key];
@@ -265,14 +276,27 @@ function applyLang(lang) {
     });
 
     setStored("lang", lang);
-    if (langToggle) langToggle.textContent = lang === "fr" ? "EN" : "FR";
+    if (langToggle) {
+        langToggle.textContent = lang === "fr" ? "EN" : "FR";
+        langToggle.setAttribute("aria-label", lang === "fr" ? "Switch language to English" : "Passer la langue en francais");
+    }
 }
 
-// Default language = English
-const savedLang = getStored("lang") || "en";
-applyLang(savedLang);
+const allI18nKeysAreMapped = [...document.querySelectorAll("[data-i18n]")]
+    .every((el) => {
+        const key = el.getAttribute("data-i18n");
+        return Boolean(translations.en[key] && translations.fr[key]);
+    });
 
-if (langToggle) {
+if (!allI18nKeysAreMapped && langToggle) {
+    langToggle.hidden = true;
+}
+
+const savedLang = getStored("lang");
+const initialLang = allI18nKeysAreMapped && savedLang ? savedLang : "en";
+applyLang(initialLang);
+
+if (langToggle && allI18nKeysAreMapped) {
     langToggle.addEventListener("click", () => {
         const current = getStored("lang") || "en";
         applyLang(current === "fr" ? "en" : "fr");
@@ -281,11 +305,14 @@ if (langToggle) {
 
 // ===== Scroll Reveal (IntersectionObserver) =====
 (function initScrollReveal() {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-
     const els = document.querySelectorAll(".reveal");
     if (!els.length) return;
+
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+        els.forEach((el) => el.classList.add("is-visible"));
+        return;
+    }
 
     const obs = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
@@ -299,6 +326,19 @@ if (langToggle) {
     els.forEach(el => obs.observe(el));
 })();
 
+// ===== Collapse mobile nav after selection =====
+(function initMobileNavClose() {
+    const nav = document.getElementById("nav");
+    if (!nav || !window.bootstrap?.Collapse) return;
+
+    const collapse = new window.bootstrap.Collapse(nav, { toggle: false });
+    nav.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth < 992) collapse.hide();
+        });
+    });
+})();
+
 // ===== Intro animation (first visit) =====
 (function initIntro() {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -307,7 +347,7 @@ if (langToggle) {
     const intro = document.getElementById("intro");
     if (!intro) return;
 
-    const seen = localStorage.getItem("introSeen");
+    const seen = getStored("introSeen");
     if (seen === "1") return;
 
     // Activate intro + blur site
@@ -317,7 +357,7 @@ if (langToggle) {
     const endIntro = () => {
         intro.classList.remove("is-active");
         document.body.classList.remove("is-intro");
-        localStorage.setItem("introSeen", "1");
+        setStored("introSeen", "1");
     };
 
     // Auto end after ~1.8s
